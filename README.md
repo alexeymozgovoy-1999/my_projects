@@ -1,67 +1,63 @@
-## **Ниже приведено описание и краткий алгоритм реализации учебного проекта**
+## **Below is the description and a brief implementation algorithm of the training project**
 
-В данном проекте были решены задачи по исследованию нескольких аспектов мобильного приложения компании, разрабатывающей мобильные игры.
+This project involved solving tasks related to analyzing several aspects of a mobile application for a company that develops mobile games.
 
-Работа выполнена на **Python** с использованием **Jupyter Notebook**.
-
-<hr>
-
-### **Задача 1** 
-**Retention** – один из самых важных показателей в компании. **Ваша задача** – написать функцию, которая будет 
-считать retention игроков (по дням от даты регистрации игрока). Данные лежат в папке **shared** и имеют следующую структуру:
-* **shared/problem1-reg_data.csv** – данные о времени регистрации
-
-| reg_ts    |uid| 
-|-----------|---|
-| 906166566 | 2 | 
-| 906344325 | 2 | 
-| 906686169 | 2 | 
-| 906893386 | 2 | 
-| 906980227 | 2 | 
-
-* **shared/problem1-auth_data.csv** – данные о времени захода пользователей в игру
-
-| auth_ts   |uid| 
-|-----------|---|
-| 906166566 | 2 | 
-| 924422172 | 3 | 
-| 937374732 | 4 | 
-| 947425117 | 5 |
-
-Функция должна быть написана на python. В ходе решения можно тестировать работу функции как на полном датасете, 
-так и на части (сэмпле) данных.
-
-### **Задача 2**
-
-Имеются результаты **A/B теста**, в котором двум группам пользователей предлагались различные наборы акционных предложений. Известно, что ARPU в тестовой группе выше на 5%, чем в контрольной. При этом в контрольной группе 1928 игроков из 202103 оказались платящими, а в тестовой – 1805 из 202667.
-
-Какой набор предложений можно считать лучшим? Какие метрики стоит проанализировать для принятия правильного решения и как?
-
-| user_id |revenue|testgroup| 
-|---------|-------|---------|
-| 1       | 0     |b        |
-| 2       | 0     |a        |
-| 3       | 0     |a        |
-| 4       | 0     |b        |
-| 5       | 0     |b        |
-
-### **Задача 3**
-
-В игре Plants & Gardens каждый месяц проводятся тематические события, ограниченные по времени. В них игроки могут получить уникальные предметы для сада и персонажей, дополнительные монеты или бонусы. Для получения награды требуется пройти ряд уровней за определенное время. С помощью каких метрик можно оценить результаты последнего прошедшего события?
-
-Предположим, в другом событии мы усложнили механику событий так, что при каждой неудачной попытке выполнения уровня игрок будет откатываться на несколько уровней назад. Изменится ли набор метрик оценки результата? Если да, то как?
+The work was done in **Python** using **Jupyter Notebook**.
 
 <hr>
 
-### **Реализация проекта:**
-* Провел предварительный анализ (EDA) и предобработку данных. 
-* Написал функцию для расчета Retention игроков.
-* Посчитал и проанализировал продуктовые метрики (Conversion Rate, ARPPU, ARPU).
-* Проверил гипотезы, проанализировал результаты А/B-теста с использованием статистических тестов в Python(тест на независимость Z-test, Bootstrap).
-* Визуализировал результаты в Python с применением seaborn и matplotlib.pyplot.
-* Выбрал метрики для оценки результатов последнего прошедшего тематического события игры Plants & Gardens в компании, разрабатывающей мобильные игры.
+### **Task 1**  
+**Retention** is one of the most important metrics for the company. **Your task** is to write a function that calculates player retention (by days since player registration). The data is located in the **shared** folder and has the following structure:  
+
+* **shared/problem1-reg_data.csv** – data on registration time  
+
+| reg_ts    | uid |  
+|-----------|-----|  
+| 906166566 | 2   |  
+| 906344325 | 2   |  
+| 906686169 | 2   |  
+| 906893386 | 2   |  
+| 906980227 | 2   |  
+
+* **shared/problem1-auth_data.csv** – data on user login times  
+
+| auth_ts   | uid |  
+|-----------|-----|  
+| 906166566 | 2   |  
+| 924422172 | 3   |  
+| 937374732 | 4   |  
+| 947425117 | 5   |  
+
+The function should be written in Python. During the solution, you can test the function on either the full dataset or a sample of the data.
+
+### **Task 2**  
+
+There are results from an **A/B test** where two user groups were offered different sets of promotional offers. It is known that ARPU in the test group is 5% higher than in the control group. However, in the control group, 1,928 out of 202,103 players were paying users, while in the test group, 1,805 out of 202,667 were paying.  
+
+Which set of offers should be considered better? What metrics should be analyzed to make the right decision, and how?  
+
+| user_id | revenue | testgroup |  
+|---------|---------|-----------|  
+| 1       | 0       | b         |  
+| 2       | 0       | a         |  
+| 3       | 0       | a         |  
+| 4       | 0       | b         |  
+| 5       | 0       | b         |  
+
+### **Task 3**  
+
+In the game *Plants & Gardens*, limited-time thematic events are held every month. In these events, players can earn unique garden items, characters, extra coins, or bonuses. To receive rewards, players must complete a series of levels within a set time. What metrics can be used to evaluate the results of the latest event?  
+
+Suppose, in another event, we modified the mechanics so that after each failed attempt to complete a level, the player is rolled back several levels. Would the set of evaluation metrics change? If yes, how?  
 
 <hr>
 
+### **Project Implementation:**  
+- Conducted preliminary data analysis (EDA) and preprocessing.  
+- Wrote a function to calculate player Retention.  
+- Calculated and analyzed product metrics (Conversion Rate, ARPPU, ARPU).  
+- Tested hypotheses and analyzed A/B test results using statistical tests in Python (Z-test for independence, Bootstrap).  
+- Visualized results in Python using **seaborn** and **matplotlib.pyplot**.  
+- Selected metrics to evaluate the results of the latest thematic event in *Plants & Gardens* for the mobile game development company.  
 
-
+<hr>  
